@@ -14,34 +14,39 @@
 <meta charset="UTF-8">
 <script src="angular.min.js"></script>
 <link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />
-   <link rel="stylesheet" href="themes/shipbuyer.css" />
+   <link rel="stylesheet" href="themes/toDoList.css" />
   <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
-    <link rel="stylesheet" href="themes/starship.css" />
-<title>Star Ship Buyer</title>
+	<link rel="icon" href="icon.png">
+<title>My To Do List</title>
 </head>
 
 <body>
 <div ng-app="myApp" ng-controller="todoCtrl">
 <div data-role="page" id="listpage" class="ui-responsive-panel">
 <div class= "panel left" data-role="panel" id="myPanel">
+<h1>Add a Task</h1>
 <form ng-submit="todoAdd()">
-<input type="text" ng-model="todoInput.name" size="30" placeholder="Add New Name">
-<input type="text" ng-model="todoInput.description" size="80" placeholder="Add New Description">
+<input type="text" ng-model="todoInput.name"  placeholder="Add New Name">
+<input type="text" ng-model="todoInput.description"  placeholder="Add New Description">
 <input type="submit" value="Add New">
 </form>
 </div>
 <div data-role="header">
-<h1>This is Ships Price List</h1>
-<a href="#myPanel" class="ui-btn ui-icon-info ui-btn-icon-left">More Information</a>
-<div ng-repeat=" x in todoList">
-<span ng-bind=" $index+1 + '. Job: '+x.todoText+' Description:   '+ x.todoDesc"></span>
- <p><button ng-click = "delete($index)">Delete</button></p>
- </div>
+<h1>This My To Do List</h1>
+<a href="#myPanel" class="ui-btn ui-icon-info ui-btn-icon-left">Add a Task</a>
+
 </div>
 <div data-role="content">
 
 	<div class="content-primary">
-	<ul data-role="listview" data-inset="true" id="searchShip" data-filter="true"></ul>
+	
+	<ul data-role="listview" data-inset="true"  data-filter="true">
+	<div ng-repeat=" x in todoList">
+	<h2>{{ x.todoText }}</h2>
+	<p>{{x.todoDesc }}</p>
+ <p><button ng-click = "delete($index)">Delete</button></p>
+ </div>
+	</ul>
 				
 
 	</div>
@@ -50,7 +55,7 @@
 
 
 <div data-role="footer">
-<h1>Price List for Ships</h1>
+<h1>Good Luck Completing Them All.</h1>
 </div>
 </div>
 
