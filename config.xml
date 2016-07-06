@@ -16,6 +16,8 @@
     <author href="https://build.phonegap.com" email="support@phonegap.com">
        Liam Millar
     </author>
+	
+	<plugin name="cordova-plugin-splashscreen" source="npm" />
 	<icon src="icon.png" />
 <splash src="splash.png" />
 
