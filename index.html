@@ -20,31 +20,44 @@
 <title>My To Do List</title>
 </head>
 
-<body>
-<div ng-app="myApp" ng-controller="todoCtrl">
+<body ng-app="myApp" ng-controller="todoCtrl">
+
+
+<!--
+* Jquery to have the form in one section and the list of tasks in another 
+-->
 <div data-role="page" id="listpage" class="ui-responsive-panel">
 <div class= "panel left" data-role="panel" id="myPanel">
 <h1>Add a Task</h1>
+<!--
+* The form for creating tasks. The task name is required but not the description 
+-->
 <form ng-submit="todoAdd()">
-<input type="text" ng-model="todoInput.name"  placeholder="Add New Name">
+<input type="text" ng-model="todoInput.name"  placeholder="Add New Name" required>
 <input type="text" ng-model="todoInput.description"  placeholder="Add New Description">
 <input type="submit" value="Add New">
 </form>
 </div>
 <div data-role="header">
 <h1>This My To Do List</h1>
-<a href="#myPanel" class="ui-btn ui-icon-info ui-btn-icon-left">Add a Task</a>
+<!--
+* Button to launch/display the side panel form
+-->
+<p><a href="#myPanel" class="ui-btn ui-icon-tag ui-btn-icon-left">Add a Task</a></p>
 
 </div>
 <div data-role="content">
 
 	<div class="content-primary">
-	
+	<!--
+* The view of the list of tasks with a delete button at the bottom of each task to remove
+* Also filter can be applied to the list. 
+-->
 	<ul data-role="listview" data-inset="true"  data-filter="true">
 	<div ng-repeat=" x in todoList">
-	<h2>{{ x.todoText }}</h2>
-	<p>{{x.todoDesc }}</p>
- <p><button ng-click = "delete($index)">Delete</button></p>
+	<h2>Task: {{ x.todoText }}</h2>
+	<p>Description: {{x.todoDesc }}</p>
+ <button class="ui-btn ui-icon-delete ui-btn-icon-right" ng-click = "delete($index)">Delete</button>
  </div>
 	</ul>
 				
