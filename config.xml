@@ -13,13 +13,15 @@
         My to do list
     </description>
 
-    <author href="https://build.phonegap.com" email="support@phonegap.com">
+    <author href="https://ie.linkedin.com/in/liam-millar-95622820" email="liam.millar@webelevate.ie">
        Liam Millar
     </author>
 	
 	<plugin name="cordova-plugin-splashscreen" source="npm" />
 	<icon src="icon.png" />
 <splash src="splash.png" />
+
+<preference name="SplashScreenDelay" value="5000" />
 
 
 </widget>
