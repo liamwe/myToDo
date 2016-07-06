@@ -1,0 +1,68 @@
+<!--
+* Author: Liam Millar
+* Assignment: WE3WE4.0 Mobile Web Applications, Digital Skills Academy
+* Date : 2016/07/03
+* Ref: website link to code referenced or the book, authors name and page number
+-->
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<script src="angular.min.js"></script>
+<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css" />
+   <link rel="stylesheet" href="themes/shipbuyer.css" />
+  <link rel="stylesheet" href="themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="themes/starship.css" />
+<title>Star Ship Buyer</title>
+</head>
+
+<body>
+<div ng-app="myApp" ng-controller="todoCtrl">
+<div data-role="page" id="listpage" class="ui-responsive-panel">
+<div class= "panel left" data-role="panel" id="myPanel">
+<form ng-submit="todoAdd()">
+<input type="text" ng-model="todoInput.name" size="30" placeholder="Add New Name">
+<input type="text" ng-model="todoInput.description" size="80" placeholder="Add New Description">
+<input type="submit" value="Add New">
+</form>
+</div>
+<div data-role="header">
+<h1>This is Ships Price List</h1>
+<a href="#myPanel" class="ui-btn ui-icon-info ui-btn-icon-left">More Information</a>
+<div ng-repeat=" x in todoList">
+<span ng-bind=" $index+1 + '. Job: '+x.todoText+' Description:   '+ x.todoDesc"></span>
+ <p><button ng-click = "delete($index)">Delete</button></p>
+ </div>
+</div>
+<div data-role="content">
+
+	<div class="content-primary">
+	<ul data-role="listview" data-inset="true" id="searchShip" data-filter="true"></ul>
+				
+
+	</div>
+</div>
+
+
+
+<div data-role="footer">
+<h1>Price List for Ships</h1>
+</div>
+</div>
+
+
+
+
+
+<script src="jquery-1.12.3.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+
+<script src="myController.js"></script>
+
+</body>
+
+</html> 
