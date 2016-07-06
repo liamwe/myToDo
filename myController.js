@@ -1,3 +1,10 @@
+/*
+* Author: Liam Millar
+* Assignment: WE3WE4.0 Mobile Web Applications, Digital Skills Academy
+* Date : 2016/07/03
+* Ref: website link to code referenced or the book, authors name and page number
+*/
+
 var app= angular.module('myApp',[]);
 app.controller('todoCtrl',function($scope){
 	/* empty list */
